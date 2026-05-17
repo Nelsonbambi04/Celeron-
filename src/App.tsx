@@ -613,7 +613,7 @@ function App() {
           </div>
         </section>
 
-        {route !== "/cobertura" && route !== "/infraestrutura" && (
+        {route !== "/" && route !== "/cobertura" && route !== "/infraestrutura" && (
           <section className="content-section visual-section">
             <VisualBlock page={page} />
           </section>

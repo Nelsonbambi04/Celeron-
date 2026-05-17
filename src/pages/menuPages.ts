@@ -16,17 +16,16 @@ import {
 import homeLuanda from "../assets/home-luanda.jpg";
 import intraImage from "../assets/intra.jpg";
 import coberturaAntenas from "../assets/antenas_2.jpg";
+import desenvolvimentoWebImage from "../assets/desenvolvimento-web.jpg";
+import padraoTecnicoImage from "../assets/padrao-tecnico.png";
 import type { PageData } from "./types";
 
-const serverRack =
-  "https://source.unsplash.com/1800x1000/?server-rack,network-cables,data-center";
 const networkInstall =
   "https://source.unsplash.com/1800x1000/?network-installation,technician,ethernet";
 const telecomTower =
   "https://source.unsplash.com/1800x1000/?telecommunication-tower,antenna,wireless";
 const fiberOptic = intraImage;
-const codeInterface =
-  "https://source.unsplash.com/1800x1000/?web-development,code,dashboard";
+const codeInterface = desenvolvimentoWebImage;
 
 export const allPages: Record<string, PageData> = {
   "/": {
@@ -191,8 +190,8 @@ export const allPages: Record<string, PageData> = {
     introTitle: "Regras claras para manter a rede documentada, segura e previsivel.",
     lead:
       "Definimos a rede para operar com segmentacao, seguranca, monitoramento e documentacao tecnica desde a primeira instalacao.",
-    heroImage: serverRack,
-    heroAlt: "Switches, cabos e servidores para padrao tecnico de rede",
+    heroImage: padraoTecnicoImage,
+    heroAlt: "Padrao de circuito eletronico para pagina de padrao tecnico",
     stats: [
       { value: "TCP/IP", label: "Base de rede" },
       { value: "VLAN", label: "Segmentacao" },
@@ -216,21 +215,21 @@ export const allPages: Record<string, PageData> = {
     ],
     visualTitle: "Console tecnico e monitoramento",
     visualText: "Monitoramento, logs e padroes de rede para acompanhar disponibilidade e reduzir falhas.",
-    visualType: "code",
+    visualType: "image",
     ctaTitle: "Padronize a sua rede antes que ela cresca sem controlo.",
     ctaButton: "Solicitar Instalacao",
   },
   "/desenvolvimento-web": {
-    seoTitle: "Desenvolvimento Web e ERP em Angola | Sites Corporativos Celeron+",
+    seoTitle: "Desenvolvimento Web, Dominio e Hospedagem em Angola | Celeron+",
     seoDescription:
-      "Desenvolvimento de ERPs, sites corporativos, portais e sistemas integrados a infraestrutura de rede para empresas em Angola.",
+      "Desenvolvimento de sites, ERPs, dominio, hospedagem, email profissional e sistemas integrados a infraestrutura de rede para empresas em Angola.",
     kicker: "Desenvolvimento Web",
-    title: "ERPs e sites corporativos conectados a infraestrutura da empresa.",
+    title: "Sites, ERPs, dominio, hospedagem e email profissional para a sua empresa.",
     introTitle: "Software empresarial precisa nascer ligado a rede, dados e processos reais.",
     lead:
-      "Criamos software sob medida que usa a rede como base: sistemas internos, portais, dashboards, relatorios e integracoes.",
+      "Criamos software sob medida e tambem tratamos da base digital da sua empresa: registo de dominio, hospedagem, email profissional, sistemas internos, portais, dashboards e integracoes.",
     heroImage: codeInterface,
-    heroAlt: "Interface colorida de codigo para desenvolvimento web corporativo",
+    heroAlt: "Programador a trabalhar com codigo em computador, tablet, smartwatch e smartphone",
     stats: [
       { value: "ERP", label: "Gestao interna" },
       { value: "API", label: "Integracoes" },
@@ -238,24 +237,24 @@ export const allPages: Record<string, PageData> = {
     ],
     servicesTitle: "Software construido para a rotina operacional.",
     services: [
-      { icon: Globe2, title: "Sites Corporativos", text: "Presenca digital profissional, rapida e preparada para SEO tecnico." },
+      { icon: Globe2, title: "Sites Corporativos", text: "Presenca digital profissional com dominio proprio, paginas rapidas e preparadas para SEO tecnico." },
       { icon: Database, title: "ERP Sob Medida", text: "Clientes, stock, vendas, relatorios, permissoes e rotinas internas." },
-      { icon: Server, title: "Infra + Software", text: "Hospedagem, backups, acesso seguro e integracao com servidores e rede." },
+      { icon: Server, title: "Dominio, Hospedagem e Email", text: "Tratamos do dominio, hospedagem, emails profissionais, backups e acesso seguro." },
     ],
     insightTitle: "Sistemas para operacoes mais organizadas.",
     insightItems: [
       "Dashboards para acompanhar indicadores da empresa",
       "Portais internos para equipas e clientes",
-      "Sistemas integrados com dados, rede e servidores",
+      "Dominio, hospedagem e email profissional configurados para a empresa",
     ],
     detailCards: [
-      { icon: ShieldCheck, title: "Seguranca Aplicacional", text: "Login, niveis de acesso, logs e protecao de dados empresariais." },
-      { icon: Network, title: "Integracao com Rede", text: "Sistemas planejados junto com conectividade, servidores e backup." },
+      { icon: ShieldCheck, title: "Seguranca Aplicacional", text: "Login, niveis de acesso, logs, protecao de dados e boas praticas para o email profissional." },
+      { icon: Network, title: "Base Digital Completa", text: "Site, dominio, hospedagem, email, servidores e backup planeados como uma solucao unica." },
     ],
     visualTitle: "Interface de desenvolvimento",
-    visualText: "Interfaces corporativas para gerir processos, dados, permissoes e relatorios.",
-    visualType: "code",
-    ctaTitle: "Solicite um sistema corporativo alinhado a sua infraestrutura.",
+    visualText: "Interfaces corporativas para gerir processos, dados, permissoes, relatorios e a presenca digital da empresa.",
+    visualType: "image",
+    ctaTitle: "Solicite o seu site, sistema, dominio, hospedagem ou email profissional.",
     ctaButton: "Solicitar Projeto",
   },
 };
