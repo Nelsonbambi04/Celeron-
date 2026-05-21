@@ -9,13 +9,14 @@ import {
   Mail,
   MapPin,
   Menu,
+  MessageCircle,
   Plus,
   RotateCcw,
   Trash2,
   Phone,
   X,
 } from "lucide-react";
-import celeronLogo from "./assets/logo-celeron.png";
+import celeronLogo from "./assets/logo-celeron-completo.png";
 import { allPages, routeAliases } from "./pages/menuPages";
 import type { PageData } from "./pages/types";
 
@@ -41,6 +42,9 @@ const luandaCenter = { lat: -8.8383, lng: 13.2344 };
 const mapZoom = 11;
 const tileSize = 256;
 const mapTileRange = 4;
+const contactPhoneLabel = "+244 945 425 054";
+const assistantWhatsAppUrl =
+  "https://wa.me/244945425054?text=Ola%20Celeron%2B%2C%20preciso%20de%20assistencia.";
 const defaultCoveragePoints: CoveragePoint[] = [
   { id: "sao-paulo", name: "Sao Paulo", lat: -8.8308, lng: 13.2572 },
   { id: "cassequel", name: "Cassequel", lat: -8.876, lng: 13.2507 },
@@ -295,13 +299,11 @@ function CoverageMap({ title, text }: { title: string; text: string }) {
       <div className="coverage-map-workspace">
         <div className="coverage-map-canvas">
           {tiles.map((tile) => (
-            <img
+            <div
               key={tile.key}
-              src={`https://tile.openstreetmap.org/${mapZoom}/${tile.x}/${tile.y}.png`}
-              alt=""
               aria-hidden="true"
+              className="coverage-map-tile"
               style={{ left: tile.left, top: tile.top }}
-              draggable={false}
             />
           ))}
           <div className="coverage-map-vignette" />
@@ -409,6 +411,8 @@ function CoverageMap({ title, text }: { title: string; text: string }) {
 }
 
 function VisualBlock({ page }: { page: PageData }) {
+  const hideVisualImage = page.visualTitle === "Interface de desenvolvimento";
+
   if (page.visualType === "map") {
     return <CoverageMap title={page.visualTitle} text={page.visualText} />;
   }
@@ -431,8 +435,8 @@ function VisualBlock({ page }: { page: PageData }) {
   }
 
   return (
-    <figure className="visual-panel image-panel">
-      <img src={page.heroImage} alt={page.heroAlt} />
+    <figure className={`visual-panel image-panel ${hideVisualImage ? "image-panel--text-only" : ""}`}>
+      {!hideVisualImage && <img src={page.heroImage} alt={page.heroAlt} />}
       <figcaption>
         <h3>{page.visualTitle}</h3>
         <p>{page.visualText}</p>
@@ -520,7 +524,6 @@ function App() {
         <div className="header-inner">
           <button type="button" className="brand" onClick={() => navigateTo("/")}>
             <img src={celeronLogo} alt="Celeron +" className="brand-logo" />
-            <span className="brand-text">eleron +</span>
           </button>
 
           <nav className="desktop-nav" aria-label="Menu principal">
@@ -720,7 +723,6 @@ function App() {
           <div className="footer-brand">
             <button type="button" className="brand" onClick={() => navigateTo("/")}>
               <img src={celeronLogo} alt="Celeron +" className="brand-logo" />
-              <span className="brand-text">eleron+</span>
             </button>
             <p>
               Internet ilimitada, infraestrutura de rede e suporte tecnico para empresas e
@@ -753,16 +755,16 @@ function App() {
           <div className="footer-contact">
             <h3>Atendimento</h3>
             <p>
-              <Phone size={16} /> +244 923 000 000
+              <Phone size={16} /> {contactPhoneLabel}
             </p>
             <p>
-              <Mail size={16} /> comercial@celeron.co.ao
+              <Mail size={16} /> comercial@celeron.com
             </p>
             <p>
-              <MapPin size={16} /> Luanda, Angola
+              <MapPin size={16} /> Palaca, Luanda, Angola
             </p>
             <p>
-              <Clock3 size={16} /> Seg. a Sex. 08h as 18h
+              <Clock3 size={16} /> Seg. a Sex. 08h a 18h
             </p>
           </div>
         </div>
@@ -771,6 +773,17 @@ function App() {
           <span>Politica de privacidade · Termos de uso · Suporte tecnico</span>
         </div>
       </footer>
+
+      <a
+        className="assistant-button"
+        href={assistantWhatsAppUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Falar com assistente no WhatsApp"
+      >
+        <MessageCircle size={22} />
+        <span>Assistente</span>
+      </a>
     </div>
   );
 }

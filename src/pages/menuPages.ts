@@ -17,13 +17,10 @@ import homeLuanda from "../assets/home-luanda.jpg";
 import intraImage from "../assets/intra.jpg";
 import coberturaAntenas from "../assets/antenas_2.jpg";
 import desenvolvimentoWebImage from "../assets/desenvolvimento-web.jpg";
-import padraoTecnicoImage from "../assets/padrao-tecnico.png";
+import padraoTecnicoImage from "../assets/padrao-tecnico-fundo.jpg";
 import type { PageData } from "./types";
 
-const networkInstall =
-  "https://source.unsplash.com/1800x1000/?network-installation,technician,ethernet";
-const telecomTower =
-  "https://source.unsplash.com/1800x1000/?telecommunication-tower,antenna,wireless";
+const networkInstall = intraImage;
 const fiberOptic = intraImage;
 const codeInterface = desenvolvimentoWebImage;
 
